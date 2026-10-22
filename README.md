@@ -1,6 +1,6 @@
-# Accumulator Options Trading App
+# Digits Trading App
 
-A self-hosted accumulator options trading app built on the Deriv WebSocket API. Your stake grows at a chosen growth rate for every tick the spot price stays within the barrier range.
+A self-hosted digit trading app built on the Deriv WebSocket API. Supports Matches/Differs, Over/Under, and Even/Odd contract types with real-time tick streaming and digit frequency statistics.
 
 ## Prerequisites
 
@@ -25,7 +25,7 @@ Edit `.env.production`:
 
 ```env
 NEXT_PUBLIC_DERIV_APP_ID=your_app_id_here
-NEXT_PUBLIC_DERIV_REDIRECT_URI=https://your-registered-redirect-uri.com
+# NEXT_PUBLIC_DERIV_REDIRECT_URI=https://your-app.example.com/path/  # optional
 NEXT_PUBLIC_DERIV_APP_NAME=your_app_name_here
 NEXT_PUBLIC_DERIV_SHOW_APP_NAME=true
 NEXT_PUBLIC_DERIV_REFERRAL_LINK=your_referral_link_here
@@ -36,7 +36,7 @@ NEXT_PUBLIC_DERIV_ENV=production
 | Variable | Description |
 |---|---|
 | `NEXT_PUBLIC_DERIV_APP_ID` | Your Deriv app ID from the App Registration dashboard |
-| `NEXT_PUBLIC_DERIV_REDIRECT_URI` | OAuth redirect URI — must exactly match the URI registered in your Deriv app |
+| `NEXT_PUBLIC_DERIV_REDIRECT_URI` | **Optional.** OAuth redirect URI. When unset, login returns to the URL the app is opened on, so that URL must be registered as a redirect URI in your Deriv app. Set it only to pin a fixed redirect (for example, a URL with a path); it must then exactly match a registered URI. |
 | `NEXT_PUBLIC_DERIV_APP_NAME` | In-app display name (header, tab title, favicon). Set in App Builder Customise. OAuth/consent registration name is configured separately and is not this env var. |
 | `NEXT_PUBLIC_DERIV_SHOW_APP_NAME` | `true` (default) shows the name next to the logo on desktop; `false` hides it (logo only). Tab title / favicon still use `NEXT_PUBLIC_DERIV_APP_NAME`. |
 | `NEXT_PUBLIC_DERIV_REFERRAL_LINK` | Affiliate referral link shown to unauthenticated users (optional) |
